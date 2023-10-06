@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+     <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+     <script>
+     function showPosition() {
+         if(navigator.geolocation) {
+             navigator.geolocation.getCurrentPosition(showMap, showError);
+         } else {
+             alert("Sorry, your browser does not support HTML5 geolocation.");
+         }
+     }
+      
+     // Define callback function for successful attempt26.0180194310296, 76.34944228098777
+     function showMap(position) {
+         // Get location data
+         lat = 26.0180194310296; 
+         long = 76.34944228098777;
+         var latlong = new google.maps.LatLng(lat, long);
+         
+         var myOptions = {
+             center: latlong,
+             zoom: 16,
+             mapTypeControl: true,
+             navigationControlOptions: {
+                 style:google.maps.NavigationControlStyle.SMALL
+             }
+         }
+         
+         var map = new google.maps.Map(document.getElementById("embedMap"), myOptions);
+         var marker = new google.maps.Marker({ position:latlong, map:map, title:"You are here!" });
+     }
+      
+     // Define callback function for failed attempt
+     function showError(error) {
+         if(error.code == 1) {
+             result.innerHTML = "You've decided not to share your position, but it's OK. We won't ask you again.";
+         } else if(error.code == 2) {
+             result.innerHTML = "The network is down or the positioning service can't be reached.";
+         } else if(error.code == 3) {
+             result.innerHTML = "The attempt timed out before it could get the location data.";
+         } else {
+             result.innerHTML = "Geolocation failed due to unknown error.";
+         }
+     }
+     </script>
+</head>
+  <body style="background-color:rgba(253, 196, 196, 0.321);">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 100px; padding-left: 40px; ">
+        <a class="navbar-brand" href="/" style="font-size: 40px;">
+            <img src="./static/3.webp" alt="Logo" width="60" height="60" class="d-inline-block align-text-top">
+
+            Hotel Ganesha, Ranthambhore</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto" style="padding-right: 160px;">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/rooms">Rooms</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">Experiences</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./static/2.webp" class="d-block w-100" style="width:600px;height:750px;padding-bottom: 50px;" alt="...">
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 style="padding-left: 50px;">About Us</h2>
+        <div class = "separator-60px"></div>
+      </div>
+      <center>
+      <div class="card" style="width: 65rem;">
+        <div class="card-body">
+          <p class="card-text">Hotel Ganesha provides the gateway to Sawai Madhopur and Ranthambore National Park. Aesthetically designed and maintained in style, “Hotel Ganesha” has drawn tourists from within the country and abroad. We offer a wide variety of terrain to suit every member of the family, and the nature trips are great for beginners too. Boasting a scenic setting village and good accessibility from all the nearest cities, our hotel spells the route to a perfect family destination.</p>
+          <p class="card-text">Home to the majestic Royal Bengal tigers, Ranthambhore is one the most shining jewels of Rajasthan’s wildlife chapter. A dry deciduous forest, Ranthambhore lies in the junction of two iconic hill ranges – the Vindhyas and the Aravallis. Ranthambhore promises you of a breathtaking sight of not only its famous tigers but also other equally exotic wildlife species such as Sambar deer, leopard, hyena, chinkara, jackal, etc.</p>
+        </div>
+      </div>
+      </center>
+
+      <div>
+        <img src="./static/5.jpeg" style="padding-left: 450px; padding-top: 150px;">
+      </div>
+      <div>
+        <h2 style="padding-left: 50px;">In The Past</h2>
+        <div class = "separator-60px"></div>
+      </div>
+      <center>
+        <div class="card" style="width: 65rem;">
+          <div class="card-body">
+            <p class="card-text">The Ranthambore fort was built by Chauhan king Ranthamban Dev in 944 AD. Most of the construction work of this fort has been done during the reign of Chauhan kings. This fort existed even during the time of Prithviraj Chauhan, the emperor of Delhi and was under the control of the Chauhans. This historical building was occupied by the Mughals during 1528, after which in the 17th century, the Mughals presented this fort as a gift to the Maharaja of Jaipur.</p>
+            <p class="card-text">Presently the Naulakha Darwaza, Delhi Darwaza, Torandwar, Hammir's father Jetsingh's umbrella, Pushpavatika, Ganesh Temple, Guptganga, Badal Mahal, Hammir Kachari, Jain Temple, etc. present in the fort have their own historical importance.</p>
+            <p class="card-text">The Temple of Trinetra Ganesh built inside the fort is quite famous, here in the month of Bhadrapada, a huge 5-day fair of Ganesh Chaturthi is organized. Where devotees from far and wide keep on visiting throughout the year.</p>
+          </div>
+        </div>
+        </center>
+        <div>
+          <h2 style="padding-left: 50px;">Reaching Sawai Madhopur</h2>
+          <div class = "separator-60px"></div>
+        </div>
+        <div class="row" style="padding-left: 80px;">
+          <div class="col-sm-3" >
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">By Air</h5>
+                <p class="card-text">The nearest airport to reach Ranthambore National Park is Sanganer Airport in Jaipur. The distance between Jaipur and Ranthambore is about 180 km and there are regular flights for Jaipur from all the major cities including, Delhi, Mumbai, Chennai, Bangalore, etc. The tourists can take a direct taxi or bus from Sanganer Airport to reach Ranthambore safely.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">By Rail</h5>
+                <p class="card-text">The nearest railway station that connects Ranthambore National Park to other important cities is Sawai Madhopur Railway Station, which is located at a distance of 10 km from the park. The tourists can avail local bus, taxi, or cab to reach the Ranthambore park smoothly.</p>
+                
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">By Road</h5>
+                <p class="card-text">Ranthambore is well connected with all the major cities and towns through state bus service and it can be reached through private buses and taxis. Jaipur, Delhi, Ahmedabad, Ajmer, and Jodhpur can be easily travelled from Ranthambore.</p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <center><h1>Connect With Us</h1></center>
+    <div class="testimonial" style="padding-left: 80px;">
+      <p><span><button type="button" onclick="showPosition();"><h3>Address:</h3></button></span>    <h3>58, Balmandir Colony, Sawai Madhopur, Rajasthan-322001</h3>
+    </p>
+    </div>
+    <center>
+    <div id="embedMap" style="width: 400px; height: 300px;">
+    </div>
+  </center>
+  <div>
+    <h3 style="padding-left: 50px;">Contact Us On: +91 94139 21059</h3>
+    <h3 style="padding-left: 50px;">Mail Us At: abc@gmail.com</h3>
+    <div class = "separator-60px"></div>
+  </div>
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-links">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Rooms</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Experiences</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <ul>
+            <li><a href="#"><i class="fa fa-facebook"><img src="./static/7.png" width="60" height="60"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube"><img src="./static/8.png"  width="60" height="60"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram"><img src="./static/6.avif" width="60" height="60"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2023 Hotel Ganesha. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>
