@@ -118,13 +118,15 @@ margin-top: 10px;
   }
   .wrapper.active .form-box.login{
     transition: none;
-    transform: translateX(-400px);
+    transform: translateX(400px);
     /*display: none;*/
   }
   .wrapper .form-box.register{
     position: absolute;
     transition: none;
-    transform: translateX(400px);
+    transform: translateX(440px);
+    max-height: 600px;
+    overflow-y: auto; 
   }
   .wrapper.active .form-box.register{
     transition: transform .18s ease;
